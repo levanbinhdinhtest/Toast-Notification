@@ -1,0 +1,118 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    padding:20px;
+    font-size: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-weight: 700;
+    color: aliceblue;
+    cursor: pointer;
+}
+
+.success{
+    background-color: forestgreen;
+
+}
+.error{
+    background-color: red;
+}
+.warning{
+    background-color: gold;
+}
+
+#notification{
+    /* cho phan nay co dinh */
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    color: aliceblue;
+
+}
+
+#notification .toast-success{
+    padding: 20px;
+    border-radius: 5px;
+    background-color: rgb(108, 194, 108);
+    border-left:  6px solid forestgreen;
+}
+#notification .toast-warning{
+    padding: 20px;
+    border-radius: 5px;
+    background-color: rgb(235, 231, 121);
+    border-left:  6px solid yellow;
+}
+#notification .toast-error{
+    padding: 20px;
+    border-radius: 5px;
+    background-color: rgb(236, 119, 115);
+    border-left:  6px solid red;
+}
+i{
+    margin: 0 10px;
+}
+.toast {
+    position: relative;
+    animation: slideShow 3s ease forwards;
+    margin-bottom: 20px;
+}
+.toast-success .time-line{
+    position: absolute;
+    width: 100%;
+    background-color: forestgreen;
+    height: 4px;
+    bottom: 0;
+    left: 0;
+    animation: time-line 2s ease forwards;
+}
+.toast-warning .time-line{
+    position: absolute;
+    width: 100%;
+    background-color: yellow;
+    height: 4px;
+    bottom: 0;
+    left: 0;
+    animation: time-line 2s ease forwards;
+}
+.toast-error .time-line{
+    position: absolute;
+    width: 100%;
+    background-color: red;
+    height: 4px;
+    bottom: 0;
+    left: 0;
+    animation: time-line 2s ease forwards;
+}
+
+@keyframes time-line{
+    0%{
+        width: 100%;
+    }
+    100%{width: 0%;}
+}
+
+@keyframes slideShow{
+    0%{transform: translateX(100%);}
+    25%{
+        transform: translateX(-10%);
+    }
+    50%{
+        transform: translateX(0%);
+    }
+    100%{
+        transform: translateX(110%);
+    }
+}
